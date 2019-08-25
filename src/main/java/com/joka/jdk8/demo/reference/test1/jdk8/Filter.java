@@ -1,4 +1,4 @@
-package com.joka.jdk8.demo.reference.jdk8;
+package com.joka.jdk8.demo.reference.test1.jdk8;
 
 import com.joka.jdk8.demo.reference.Apple;
 

@@ -17,6 +17,7 @@ public class CurrencyTransaction {
 
     public static Map<String, List<Currency>> transactionsByCCurreny(List<Currency> list, double limit) {
 
+        //这里的stream是由接口的默认方法提供的
         Map<String, List<Currency>> result = list.stream()
                 .filter((Currency c) -> c.getAmount() > limit)
                 .collect(groupingBy(Currency::getCurrency));

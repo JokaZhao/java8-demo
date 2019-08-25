@@ -1,4 +1,4 @@
-package com.joka.jdk8.demo.reference.jdk8;
+package com.joka.jdk8.demo.reference.test1.jdk8;
 
 import com.joka.jdk8.demo.reference.Apple;
 
@@ -16,6 +16,7 @@ public class TestMain {
 
         List<Apple> appleList = Apple.createAppleList();
 
+        //这里的Apple::isBigApple是基于匿名类来实现的，类似于new Predicate()
         List<Apple> bigApples = Filter.filterApple(appleList, Apple::isBigApple);
 
         System.out.println("Big Apple Size is :" + bigApples.size());
