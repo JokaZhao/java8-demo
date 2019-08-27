@@ -29,3 +29,37 @@ Function接口：
         }
         return result;
     }
+
+
+### 方法引用
+类似于以下的代码方式：
+
+    list.sort((Apple a1 , Apple a2) -> a1.getWeight().compareTo(a2.getWeight()));
+
+使用方法引用后：
+
+    list.sort(comparing(Apple::getWeight));
+
+ 方法引用就是让你根据已有的方法实现来创建Lambda表达式
+
+ 如何构建方法的引用：
+ - 指向静态方法的方法引用（例如Integer的parseInt方法，写作Integer::parseInt）
+ - 指向任意类型实例方法的方法引用（例如String的length方法，写作String::length）
+ - 指向现有对象的实例方法的方法引用
+
+ 例子，对应上面三个说明：
+ - (args) -> ClassName.staticMethod(args)   -->   ClassName::staticMethod
+ - (arg0 , rest) -> arg0.instanceMethod(rest)  -->  ClassName::instanceMethod
+ - (args) -> expr.instanceMethod(args)  -->  expr::instanceMethod
+
+### 构造函数引用
+对于一个现有构造函数，可以利用它的名称和关键字new来创建一个引用：ClassName::new
+
+例子：
+
+    Supplier<Apple> c1 = Apple::new;
+    Apple a = c1.get();
+ 或者
+
+    Function<Integer,Apple> c2 = Apple::new;
+    Apple a2 = c2.apply(100);

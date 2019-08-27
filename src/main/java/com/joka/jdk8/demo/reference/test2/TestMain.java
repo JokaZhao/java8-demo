@@ -28,6 +28,23 @@ public class TestMain {
     }
 
     /**
+     * 通过使用Lambda来实现策略模式
+     */
+    public static void testWithJava8(){
+
+
+        List<Apple> appleList = Apple.createAppleList();
+
+        prettyPrintApple(appleList,apple -> {
+            String desc = apple.getWeight() > 150 ? "heavy" : "light";
+            return "A "+ desc + " " + apple.getColor() + " apple";
+        });
+
+        prettyPrintApple(appleList,apple ->  "An apple of "+ apple.getWeight() + "g");
+
+    }
+
+    /**
      * 实现了基于策略模式格式化输出，在JDK8之前要实现，就需要在方法中定义一个策略接口，通过传入的对象不同来实现
      * 请看testBeforeJava8 与 testWithJava8 方法的实现对比
      * @param appleList

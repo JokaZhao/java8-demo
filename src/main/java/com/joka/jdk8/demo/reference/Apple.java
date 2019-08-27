@@ -16,6 +16,11 @@ import java.util.List;
 @AllArgsConstructor
 public class Apple {
 
+    public Apple(Integer i) {
+
+        this.weight = i;
+    }
+
     private String color;
 
     private int weight;
