@@ -14,6 +14,13 @@ Lambda是一次性的，使用完一次就关闭了，比如下面的例子，�
 - distinct:过滤重复值，通过对象的hashcode和equal方法
 - count:返回一个数量结果
 - collect: 将流转换为其他形式
+- allMatch：传入一个lambda，看流中的内容是否都匹配，返回一个boolean
+- anyMatch:传入一个lambda，看流中的内容是否存在一个或者以上匹配，返回一个boolean
+- noneMatch：传入一个lambda，看流中的内容是否都不匹配，返回一个boolean
+- findAny：返回一个一个Optional对象，返回流中第一个对象
+- findFirst:返回一个一个Optional对象，返回流中第一个对象,优先使用findAny，因为在并行中效率更高
+- reduce:归约，传入一个lambda，将所有元素反复结合起来，得到一个新的值
+- flatMap:将多个流合成一个流
 
 Lambda分为两种类型：
 
@@ -24,3 +31,4 @@ Lambda分为两种类型：
 2. 终端操作
 
 终端操作会从流中生成另外一个结果，比如List、Integer，比如foreach（）、count()、collect()
+
