@@ -1,4 +1,4 @@
-package com.joka.jdk8.demo.stream;
+package com.joka.jdk8.demo.stream.demo;
 
 import java.util.Arrays;
 import java.util.List;

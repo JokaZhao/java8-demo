@@ -32,3 +32,18 @@ Lambda分为两种类型：
 
 终端操作会从流中生成另外一个结果，比如List、Integer，比如foreach（）、count()、collect()
 
+Collectors类的静态工厂方法：
+- toList: 将流中所有元素收集为一个List
+- toSet: 将流中所有元素收集为一个Set
+- toCollection: 将流中所有元素收集到给定的集合中，示例：stream.collect(toCollection(),ArrayList::new);
+- counting: 计算元素个数
+- summingInt: 进行整数属性求和
+- averagingInt: 对整数进行平均值运算
+- summarizingInt: 收集流中元素的的统计值，比如最大、最小、总和和平均值，返回的对象类型为IntSummaryStatistics
+- joining: 对元素都调用toString方法，拼接成字符串
+- maxBy: 在流中根据给定的比较器算出最大值
+- minBy: 在流中根据给定的比较器算出最小值
+- reducing: 归约操作
+- collectingAndThen: 包裹另一个收集器，对其结果应用转换函数
+- groupingBy: 分组
+- partitioningBy: 分区
